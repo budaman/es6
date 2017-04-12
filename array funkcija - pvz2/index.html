@@ -1,0 +1,23 @@
+<script>
+
+//Anonimines funkcijos
+
+//Anonimine funkcija kai siunciama reiksme per A
+var x = function (a){return a;}
+var y = a => a;
+// alert (x(5));
+// alert (y(5));
+
+//Anonimine funkcija kai nesiunciama reiksme
+var q = () => alert("hello");
+// q();
+
+//Anonimine funkcija kai yra siunciami keli parametrai
+var w = (a, b, c) => a + b + c;
+// alert(w(2,4,6));
+
+//Anonimine funkcija per set timeout metoda
+var sek = ()=> console.log("2 sekundes praejo");
+setTimeout (sek, 2000);
+
+</script>
