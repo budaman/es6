@@ -1,0 +1,28 @@
+
+
+<h2 id="status">0</h2>
+
+<script>
+// //objeto pavyzdys be array funkcijos
+// function Car() {
+//   this.speed = 0; // this pasako, kad su dabartiniu objektu yra dirbama, objektu gi gali buti daug
+//   var self = this; // problema budavo, kad kai darai funkcija ir joje budavo metodas (pvz set interval), reikedavo susikurti nauja kintamaji
+//                    // kuris supranta, kad dirbama su dabariniu objetu ir jam priskirti reiksme THIS
+//   setInterval (function() {
+//     self.speed++;  // cia siaip turetu buti this.speed, bet kadangi funkcijoje, funkcijoje nesupranta, kad
+//                   //this. tai reikejo is globalaus bloko sukurt kintamaji su reiksme this, kad suprastu, kad dirbama su dabartiniu objektu
+//     document.getElementById("status").innerHTML = self.speed;
+//   }, 300);
+//   }
+
+  function Car() {
+    this.speed = 0;
+    setInterval (() => { //array funkcija nesunaikina THIS reiksmes kaip paprasta funkcija metode, todel papildomo kintamojo nereikia kurtis
+      this.speed++;
+      document.getElementById("status").innerHTML = self.speed;
+    }, 300);
+    }
+
+
+Car();
+</script>
