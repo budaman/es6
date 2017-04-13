@@ -1,0 +1,33 @@
+
+<script>
+// ¯\_(ツ)_/¯
+
+
+
+// //iprastas pavyzdys perduoti masyvu skaicius
+//
+// function addNumbers (a,b,c){
+//   console.log(a+b+c);
+// }
+//
+// var nums = [5, 4, 3];
+// addNumbers(nums[0],nums[1],nums[2]);
+
+
+//su ... nums galima perduoti is eiles visus masyvo narius.
+function addNumbers (a,b,c,d){
+  console.log(a+b+c+d);
+}
+
+var nums = [5, 4, 3, 4];
+addNumbers(...nums);
+
+// masyvo sukurimas kitame pasyve su ...KINTAMASIS
+var meats = ['bacon', 'ham'];
+var food = ['apple', ...meats, 'kiwi'];
+
+console.log(food);
+
+
+
+</script>

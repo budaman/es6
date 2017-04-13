@@ -1,0 +1,42 @@
+<script>
+// ¯\_(ツ)_/¯
+
+//klases pavyzdys ES6
+class Person {
+
+  constructor(name, age, weight){
+    this.name = name;
+    this.age = age;
+    this.weight = weight;
+  }
+  displayName(){
+    console.log(this.name);
+  }
+  displayAge(){
+    console.log(this.age);
+  }
+  displayWeight(){
+    console.log(this.weight);
+  }
+}
+
+// Extends reiskia pasiimti informacija is Person class, kad nereiketu visko is
+//naujo rasyti vel ir vel. Extends reiskia paveldimuma.
+class Programmer extends Person{
+  constructor(name, age, weight, language){
+
+    //cia paveldi is super Clases(arba parent klases) nustatymus
+    super(name, age, weight);
+    this.language = language;
+  }
+  displayLanguage(){
+
+    console.log(`${this.name} megsta ${this.language} programavimo kalba taip pat jam yra ${this.age} metu ir jis sveria ${this.weight} kilogramus `);
+  }
+}
+//atkreipt demesi, kad parametrus vedu tokius pacius kaip Person klases, nors cia visai kita klases
+// taip yra todel, kad paveldi su extend ir super() metodu praeitos klases konstruktoriu.
+var mantvydas = new Programmer('Mantvydas', 27, 90, "Java Script");
+mantvydas.displayLanguage();
+
+</script>
