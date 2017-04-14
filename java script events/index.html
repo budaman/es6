@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Events In Javascript</title>
+  </head>
+  <body>
+      <h1>Java Script Events</h1>
+
+      <h4>add numbers </h4>
+      <p>
+        <input id="num-one"> + <input id="num-two">
+      </p>
+      <p id="add-sum"> </p>
+
+  </body>
+</html>
+
+<script type="text/javascript">
+
+const numOne = document.querySelector('#num-one');
+const numTwo = document.querySelector('#num-two');
+const addSum = document.querySelector('#add-sum');
+
+
+//funkcija add vykdoma tik tuome, kuomet numOne priskirtoje srityje yra nutikes
+//issauktas eventas, siuo atveju - input eventas
+numOne.addEventListener('input', add);
+numTwo.addEventListener('input', add);
+
+function add(){
+  //gali mesti eroru, nes pries ivykdant eventa nebus dar priskirta jokia reiksme
+  //kintamaisiams, kad to isvenkti || priskirs 0;
+  var one = parseFloat(numOne.value) || 0;
+  var two = parseFloat(numTwo.value) || 0;
+  var sum = one + two;
+  addSum.innerHTML = "Your sum is " + sum;
+}
+
+</script>
