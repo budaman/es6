@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>for Each Loop</title>
+  </head>
+  <body>
+      <h1>Froots</h1>
+      <ul id="fruits"></ul>
+
+  </body>
+</html>
+
+<script type="text/javascript">
+// ¯\_(ツ)_/¯
+window.onload = function() {
+
+var fruits = ["mango", "banana", "apple", "lemon", "carrot"];
+// const vaisiai = document.querySelector('.fruits');
+
+  fruits.forEach(function(fruit) {
+      var li = document.createElement("LI");
+      var gautasTekstas = document.createTextNode(fruit);
+      li.appendChild(gautasTekstas);
+      document.querySelector('#fruits').appendChild(li);                   // Append the text to <li>
+  });
+
+}
+</script>
