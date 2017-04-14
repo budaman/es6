@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Events In Javascript</title>
+  </head>
+  <body>
+    <h4>Pictures</h4>
+    <ul>
+      <li><a data-img="simon-pic" id="simon" href="#">Simon Cowel</a></li>
+      <li><a data-img="bruce-pic" id="bruce" href="#">Bruce Willis</a></li>
+      <li><a data-img="ben-pic" id="ben" href="#">Ben Carson</a></li>
+    </ul>
+
+    <img class="hide" id="simon-pic" src="http://simoncowellonline.com/communities/8/004/012/120/038//images/4598431911.jpg">
+    <img class="hide" id="bruce-pic" src="http://www.dreadcentral.com/wp-content/uploads/2015/03/bruce_willis.jpg">
+    <img class="hide" id="ben-pic" src="http://www.lifenews.com/wp-content/uploads/2015/07/bencarson10.png">
+  </body>
+</html>
+
+<script type="text/javascript">
+
+var simon = document.querySelector('#simon');
+var bruce = document.querySelector('#bruce');
+var ben = document.querySelector('#ben');
+
+ function hide () {
+   var allImages = document.querySelectorAll("img");
+   for(var i=0; i<allImages.length; i++)
+    {
+      allImages[i].className = "hide";
+    }
+
+   var picId = this.attributes["data-img"].value;
+   var pic = document.querySelector(`#${picId}`);
+   if (pic.className==="hide")
+   pic.className=""
+   else pic.className = "hide";
+   temp = pic;
+}
+
+
+simon.addEventListener('click', hide);
+bruce.addEventListener('click', hide);
+ben.addEventListener('click', hide);
+
+
+</script>
+
+<style media="screen">
+  .hide {
+    display: none;
+  }
+</style>
