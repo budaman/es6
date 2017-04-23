@@ -3,6 +3,7 @@ var caption = ['Pink Floyd - Animals', 'Pink Floyd - Time', 'Pink Floyd - Wish Y
 
 var imageNumber = 0;
 var imageLength = images.length -1;
+var sec = 5000;
 
 var previous = document.querySelector('#previous');
 var next = document.querySelector('#next');
@@ -35,3 +36,7 @@ previous.addEventListener('click', function() {
 next.addEventListener('click', function(){
   changeImage(1);
 });
+
+function autoRun() {
+ setInterval('changeImage(1)', sec);
+}
