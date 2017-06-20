@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+   </head>
+   <body>
+
+      <script>
+
+      "use strict"; //<- kai apsirasom globalu kintamaji pvz var i =0 ir po to funkcija
+      //kur yra var i = 5, tai funkcijoje esantis var nepakeis globalaus kintamajo, bet jeigu
+      //funkcijoje uzmirstume parasyti zodi "var" ir parasytume tik i =5, tuomet jis galvotu, kad
+      //kreipiamies i globalu kintamaji ir ji is kart pakeistu, todel "use strict" apsaugo nuo to, ir
+      //neleidzia kintamojo pakeisti is funkcijos
+
+         for(var i = 0; i<10; i++) {
+            console.log(i);
+         }
+         //dazniausiai visose kalbose i uz for pradingtu ir jo tiesiog nerodytu
+         console.log('po visko i nepradingsta ir jo reiksme toliau skaiciuojama ' + i);
+
+
+         //kad padaryti, kad elementas butu naudojamas tik vienam fore, zmones darydavo automatiskai
+         //islendancia funkcija, nes funkcijos viduje, JS kalboje, var nepermusa kitu to paties pavadinimo var
+         (function () {
+            for(var i = 0; i<10; i++) {
+               console.log(i);
+            }
+         })(); //<--automatiskai issikviecianti funkcija
+
+
+         // -----------  LET atsiradimas --------------------//
+
+         //naudojantis let kintamaju, nebereikia i nunulinti arba i apsaugoti, kad jis nepakenktu globaliniam kintamajam
+         //tarkim mes esam apsirase i kaip globalu ir darom loopa su let i nepalies globalaus ar kitu kintamuju, nes jis veiks
+         //tik tame lygyje kuris jis aprasytas
+
+
+         //const negalima tiesiogiai pakeisti reiksmes, ji galima pakeisti tik per object properties, bet ne tiesiogines reiskemses
+
+
+         const x = { y:5 };
+
+         console.log(x);
+
+      //   x=5; taip negalima
+      x.y = 6; // taip tik galima, galima keisti ne pati objekta, bet jo properties
+
+      //viskas codavime turi buti parengta "MINIMAZE MUTABLE STATE" principu, tai reiskia,
+      //kad negalima pasiekti kintamajo ar jo keisti, kai to nereikia
+
+
+
+
+
+      </script>
+   </body>
+</html>
